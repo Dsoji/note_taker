@@ -1,0 +1,2 @@
+/Users/mac/Documents/Flutter Projects/Personal/note_taker/android/app/.cxx/RelWithDebInfo/1p5j1tq4/x86/CMakeFiles/edit_cache.dir
+/Users/mac/Documents/Flutter Projects/Personal/note_taker/android/app/.cxx/RelWithDebInfo/1p5j1tq4/x86/CMakeFiles/rebuild_cache.dir

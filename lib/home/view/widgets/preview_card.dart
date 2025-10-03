@@ -8,6 +8,9 @@ class PreviewCard extends StatelessWidget {
   final VoidCallback onTap;
   final VoidCallback onDelete;
 
+  /// NEW:
+  final VoidCallback? onShare;
+
   const PreviewCard({
     super.key,
     required this.color,
@@ -15,6 +18,7 @@ class PreviewCard extends StatelessWidget {
     required this.content,
     required this.onTap,
     required this.onDelete,
+    this.onShare, // NEW
   });
 
   @override
@@ -49,12 +53,25 @@ class PreviewCard extends StatelessWidget {
                   ),
                   onSelected: (String value) {
                     switch (value) {
+                      case 'share':
+                        if (onShare != null) onShare!();
+                        break;
                       case 'delete':
                         onDelete();
                         break;
                     }
                   },
                   itemBuilder: (BuildContext context) => const [
+                    PopupMenuItem<String>(
+                      value: 'share',
+                      child: Row(
+                        children: [
+                          Icon(Icons.ios_share, size: 18),
+                          SizedBox(width: 8),
+                          Text('Share as Image'),
+                        ],
+                      ),
+                    ),
                     PopupMenuItem<String>(
                       value: 'delete',
                       child: Row(
