@@ -171,7 +171,6 @@ class EditNotePage extends HookConsumerWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              // ── Title editor (bounded height to avoid infinite constraints)
               Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -246,8 +245,6 @@ class EditNotePage extends HookConsumerWidget {
             ],
           ),
         ),
-
-        // ── Always-visible FAB toolbar (centered at bottom)
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: _FabEditorToolbar(
           editor: contentEditor,

@@ -1,17 +1,78 @@
-# note_taker
 
-A new Flutter project.
+## 🎯 Key Components
 
-## Getting Started
+### NoteModel
+- Represents individual notes with id, title, content, and modification time
+- Handles note serialization and data management
 
-This project is a starting point for a Flutter application.
+### NoteData (ChangeNotifier)
+- Manages note CRUD operations
+- Handles theme settings (dark/light mode)
+- Integrates with Hive database for persistence
 
-A few resources to get you started if this is your first Flutter project:
+### HomeView
+- Main screen displaying notes timeline
+- Search functionality
+- Note creation and navigation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### EditScreen
+- Rich text editor for creating/editing notes
+- PDF export capabilities
+- Screenshot functionality
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# note_taker
+## 🎨 Features in Detail
+
+### Theme Management
+- System theme detection
+- Manual dark/light mode toggle
+- Persistent theme preferences
+
+### Note Management
+- Create new notes
+- Edit existing notes
+- Delete notes
+- Search through notes
+- Date-based organization
+
+### Sharing Options
+- Export notes as PDF
+- Take screenshots of notes
+- Share via system share sheet
+
+## 🔧 Configuration
+
+The app uses Hive for local storage with the following boxes:
+- `note_database`: Stores notes and app settings
+
+## 📦 Dependencies
+
+Key dependencies include:
+- `hooks_riverpod`: State management
+- `hive_flutter`: Local database
+- `super_editor`: Rich text editing
+- `date_picker_timeline`: Date selection
+- `pdf`: PDF generation
+- `share_plus`: Note sharing
+- `screenshot`: Screenshot capture
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- Flutter team for the amazing framework
+- All the package maintainers for their excellent work
+- The open-source community for inspiration and support
+
+---
+
+**Note**: This is a personal note-taking application designed for local use. All data is stored locally on your device for privacy and security.

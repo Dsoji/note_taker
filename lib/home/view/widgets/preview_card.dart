@@ -8,7 +8,6 @@ class PreviewCard extends StatelessWidget {
   final VoidCallback onTap;
   final VoidCallback onDelete;
 
-  /// NEW:
   final VoidCallback? onShare;
 
   const PreviewCard({
@@ -18,7 +17,7 @@ class PreviewCard extends StatelessWidget {
     required this.content,
     required this.onTap,
     required this.onDelete,
-    this.onShare, // NEW
+    this.onShare,
   });
 
   @override

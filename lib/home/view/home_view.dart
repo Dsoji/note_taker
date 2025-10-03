@@ -26,7 +26,6 @@ class HomeView extends HookConsumerWidget with ShareMixin {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Initialize notes once when the widget is first built
     useEffect(() {
       final data = ref.read(noteDataProvider);
       data.initializeNotes();
@@ -90,8 +89,6 @@ class HomeView extends HookConsumerWidget with ShareMixin {
       );
     }
 
-    /// ---------- Share-as-Image (off-screen) ----------
-    /// Pretty share card UI
     Widget buildShareCard(NoteModel note) {
       return Material(
         color: Colors.transparent,
@@ -201,7 +198,6 @@ class HomeView extends HookConsumerWidget with ShareMixin {
     /// Capture the share UI off-screen and hand the bytes to your mixin
     Future<void> shareNote(NoteModel note) async {
       try {
-        // Wrap the card in a minimal app shell to give it proper context
         final shareWidget = MediaQuery(
           data: const MediaQueryData(size: Size(1080, 1920)),
           child: MaterialApp(
@@ -229,8 +225,6 @@ class HomeView extends HookConsumerWidget with ShareMixin {
         );
       }
     }
-
-    /// ---------- End share-as-image ----------
 
     const List<Color> predefinedColors = [
       Color(0xFFC2DCFD),
