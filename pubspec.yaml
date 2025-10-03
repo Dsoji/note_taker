@@ -2,7 +2,7 @@ name: note_taker
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -31,18 +31,26 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  date_picker_timeline: ^1.2.7
-  flutter_quill: ^2.0.7
+  date_picker_timeline: ^1.2.5
+  super_editor: ^0.2.7
   gap: ^3.0.1
   hive_flutter: ^1.1.0
   hive: ^2.2.3
-  intl: ^0.20.2
+  intl: ^0.18.1
   path: ^1.9.0
   hooks_riverpod: ^2.6.1
+  flutter_hooks: ^0.21.2
+  pdf: ^3.11.3
+  # share_plus: ^12.0.0
+  permission_handler: ^12.0.1
+  cross_file: ^0.3.4+2
+
+# pubspec.yaml
+dependency_overrides:
+  flutter_keyboard_visibility: ^6.0.0
 
 dev_dependencies:
   flutter_test:
@@ -60,7 +68,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

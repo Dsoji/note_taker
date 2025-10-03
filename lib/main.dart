@@ -10,18 +10,16 @@ void main() async {
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const HomeView(),
+  Widget build(BuildContext context, WidgetRef ref) {
+    final noteData = ref.watch(noteDataProvider);
+
+    return const MaterialApp(
+      title: 'Note Taker',
+      home: HomeView(),
     );
   }
 }

@@ -17,6 +17,8 @@ class HiveDataBase {
           id: savedNotes[i][0],
           title: savedNotes[i][1],
           content: savedNotes[i][2],
+          modifiedTime:
+              savedNotes[i].length > 3 ? savedNotes[i][3] : DateTime.now(),
           // color: savedNotes[i][3],
         );
         //add to list
@@ -30,6 +32,7 @@ class HiveDataBase {
           id: 0,
           title: 'Sample note',
           content: 'Sample content',
+          modifiedTime: DateTime.now(),
           // color: Colors.pink,
           //   content:
           //       'A FREE way to support the channel is to give us a LIKE . It does not cost you but means a lot to us.\nIf you are new here please Subscribe',
@@ -57,8 +60,8 @@ class HiveDataBase {
       int id = note.id;
       String title = note.title;
       String content = note.content;
-      // Color color = note.color;
-      allNotesFormatted.add([id, title, content]);
+      DateTime modifiedTime = note.modifiedTime;
+      allNotesFormatted.add([id, title, content, modifiedTime]);
     }
     //store in hive
     _myBox.put("ALL_NOTES", allNotesFormatted);
